@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Robinson Andres Brito Lizarazo" />
+    <meta name="" content="" />
+    <meta name="" content="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Mision 2</title>
+  </head>
+  <body>
+    <header>
+        <!-- Barra de navegacion -->
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark bd-navbar" id="nav">
+        <div class="container-fluid">
+          <a class="navbar-brand ps-3" href="#" id="logo"
+            ><img
+              src="./assets/undraw_gaming_re_cma2.svg"
+              alt="Logo"
+              class="img-fluid"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end pe-5"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Contenido
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#acerca-de">Acerca</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#opiniones">Opiniones</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#preguntas-frecuentes">Preguntas frecuentes</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Registro</a>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="formulario">
+                            <div class="mb-3">
+                                <label for="nombres" class="col-form-label">Nombres</label>
+                                <input type="text" class="form-control" id="nombres">
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellidos" class="col-form-label">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">Correo electronico</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="celular" class="col-form-label">Celular</label>
+                                <input type="number" class="form-control" id="celular">
+                            </div>
+                            
+                            <!-- Botones modal -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                              <button type="submit" id="boton-enviar"  class="btn btn-primary opacity-25" disabled>Enviar</button>
+                            </div>
+                          </form>
+                          <!-- Spinner -->
+                          <div class="text-center p-2 visually-hidden" id="spinner">
+                            <div class="spinner-border text-primary " role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
+                          </div><!-- spinner -->
+                          <!-- Alerta de exito -->
+                          <div id="alerta-exito" class=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- Acaba modal -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <!-- Registro -->
+        <div id="registro" class="container-fluid mt-3 p-4 rounded-3 visually-hidden" style="background-color: #9ac3ff">
+
+        </div>
+        <!-- Acerca de nosotros -->
+      <section id="acerca-de" >
+        <div class="container-fluid rounded-3 mt-3 mx-0 p-4 d-flex justify-content-center flex-row-reverse row row-cols-auto" style="background-color: #9ac3ff;" >
+            <!-- Imagen -->
+            <figure class="col col-md-6 d-flex justify-content-center align-items-center">
+                <img
+                    src="./assets/undraw_video_game_night_8h8m.svg"
+                    alt=""
+                    class="rounded img-fluid" 
+                    style="max-height: 300px;"
+                />
+            </figure>
+            <!-- Contenedor titulo, texto y boton -->
+            <div class="d-flex flex-column align-items-center justify-content-around col col-md-6">
+                <h1 class="col-12 text-center">Videojuegos para la salud</h1>
+                <p class="col-12 px-5">
+                    Según concluyen esos estudios, los videojuegos no solo favorecen
+                    el desarrollo cognitivo del cerebro, sino que además resultan una
+                    altamente efectiva herramienta de aprendizaje por su alto grado de
+                    motivación e interacción directa con los conceptos a impartir.
+                </p>
+                <button type="button" class="btn btn-primary col-8 col-md-6 col-xl-5 ">
+                    Contáctanos
+                </button>
+            </div>
+        </div>
+      </section>
+      <!-- Opiniones -->
+      <section id="opiniones" >
+        <!-- Contenedor titulo y cards -->
+        <div class="container-fluid rounded-3 mt-3 p-4" style="background-color: #9ac3ff;">
+            <!-- Titulo -->
+            <h2 class="text-center pb-3">¿Qué opinan nuestros usuarios?</h2>
+            <!-- Contenedor de las cards -->
+            <div class="card-group">
+                <!-- Card -->
+                <div class="card text-center">
+                    <img src="./assets/undraw_game_world_re_e44j.svg" class="card-img-top img-fluid" alt="..." >
+                    <div class="card-body">
+                        <h5 class="card-title">Jose Maria</h5>
+                        <figure>
+                            <img src="./assets/pngwing.com.png" alt="puntaje img-fluid" class="img-fluid" style="height: 30px;">
+                        </figure>
+                        <p class="card-text">Me parece interesante este post.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="card text-center">
+                    <img src="./assets/undraw_gaming_re_cma2.svg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <figure>
+                            <img src="./assets/pngwing.com.png" alt="puntaje img-fluid" class="img-fluid" style="height: 30px;">
+                        </figure>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="card text-center">
+                    <img src="./assets/undraw_video_game_night_8h8m.svg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <figure>
+                            <img src="./assets/pngwing.com.png" alt="puntaje img-fluid" class="img-fluid" style="height: 30px;">
+                        </figure>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- Preeguntas frecuentes -->
+      <section id="preguntas-frecuentes">
+        <div class="container-fluid rounded-3 mt-3 mx-0 p-4 " style="background-color: #9ac3ff">
+            <h3 class="text-center pb-3">Preguntas Frecuentes</h3>
+            <div class="container accordion" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed h1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            ¿Qué hacer cuando se presentan síntomas que muestran adicción, ansiedad o agresividad?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Hablar con el hijo, explicarle las consecuencias en la vida real (familiar, social, académica, etc.) de estar abusando de los videojuegos. También es preciso evitar que los niños jueguen con programas de alto contenido violento.
+                            <br><br>
+                            Es necesario establecer estrategias alternativas para el uso del tiempo libre, y planear actividades para el hijo o los hijos en compañía de los padres. No es solo apagando las consolas que aprenden los niños a hacer buen uso de esta tecnología: también hay que poner a su alcance otras alternativas.
+                            <br><br>
+                            Hay que recordar que los videojuegos no son ni buenos ni malos: es el uso que les damos lo que los puede convertir en una fuente de recreación o una fuente de problemas. </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed h1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        La industria de los videojuegos es una de las que más llama la atención de los más jóvenes. ¿Qué consejo darías a quiénes quieran dedicarse a ella?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">En primer lugar, que sean conscientes de algo muy importante: que hay sitio y pastel para todos, que no es una moda ni “una cosa de frikis”. Que realmente es una industria seria y reconocida que no para de crecer tanto económicamente como en otros campos de aplicación o influencia social.
+                            <br><br>
+                        En segundo lugar, les diría que un videojuego tiene muchas partes: diseño, arte y programación son las más conocidas, creativas y técnicas, pero también existe la parte de producción, marketing, gestión de la comunidad y redes, publicidad, testeo, localización, etc. Cada uno debe ser consciente, de todas estas, cuál le gusta más o en cuál se ve que encaja mejor. 
+                        <br><br>
+                        En tercer y último lugar, que sepan ver también que a nivel profesional es un mundo realmente apasionante, pero que no deja de ser eso, un trabajo. Dedicarte a los videojuegos no es lo mismo que jugarlos, aunque es cierto que cuanto más trabajas con ellos, más te gustan, los aprecias y divierten. Yo aquí siempre digo la gran cita de Confucio de que “trabaja en lo que te gusta y nunca tendrás que trabajar ni un día de tu vida”. 
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed h1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            ¿Qué ventajas pueden derivarse del uso de los videojuegos en las diferentes etapas de nuestra vida?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"> los videojuegos ayudan enormemente a desarrollar habilidades cognitivas especialmente en la niñez, del mismo modo que lo hacen otros juegos infantiles o incluso más. <br><br> En adolescentes y adultos jóvenes, potencian la curiosidad por aprender, favorecen determinadas habilidades (tanto sociales y de desarrollo personal como de razonamiento o resolución de problemas), permiten el desarrollo de distintas áreas transversales del currículum y refuerzan la autoestima. En adultos de avanzada edad e incluso ancianos, ayudan a retrasar el deterioro de la visión, la memoria o la capacidad de atención. <br><br>Además, en otras iniciativas de aplicación de videojuegos con personas que presentan algún trastorno psicológico, o como terapia del dolor en enfermos terminales, e incluso en personas con discapacidades mentales, se están alcanzando resultados bastante positivos. </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed h1" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            ¿Qué hacer cuando se presentan síntomas que muestran adicción, ansiedad o agresividad?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Hablar con el hijo, explicarle las consecuencias en la vida real (familiar, social, académica, etc.) de estar abusando de los videojuegos. También es preciso evitar que los niños jueguen con programas de alto contenido violento.
+                            <br><br>
+                            Es necesario establecer estrategias alternativas para el uso del tiempo libre, y planear actividades para el hijo o los hijos en compañía de los padres. No es solo apagando las consolas que aprenden los niños a hacer buen uso de esta tecnología: también hay que poner a su alcance otras alternativas.
+                            <br><br>
+                            Hay que recordar que los videojuegos no son ni buenos ni malos: es el uso que les damos lo que los puede convertir en una fuente de recreación o una fuente de problemas. </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+        <!-- Pie de pagina -->
+      <section id="pie-pagina">
+        <div class="container-fluid rounded-3 mt-3 mx-0 p-4 d-flex justify-content-around" style="background-color: #9ac3ff">
+            <!-- Imagen -->
+            <figure class="">
+                <img
+                    src="./assets/undraw_game_world_re_e44j.svg"
+                    alt=""
+                    class="rounded img-fluid" 
+                    style="max-height: 100px;"
+                />
+            </figure>
+            <!-- Contenedor titulo, texto y boton -->
+            <div class="d-flex flex-column align-items-center justify-content-around">
+                <h1 class="col-12 text-center text-primary">Hecho por Robinson Brito</h1>
+            </div>
+        </div>
+      </section>
+    </footer>
+    <script src="./app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
